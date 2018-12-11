@@ -1,0 +1,30 @@
+﻿spring:
+  application:
+    name: serverprovider
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8083/eureka/    
+---
+spring:
+  profiles: provider1
+
+server:
+  port: 9090
+
+eureka:
+  instance:
+    instance-id: provider9090
+    prefer-ip-address: true
+    
+---
+spring:
+  profiles: provider2
+  
+server:
+  port: 9091
+
+eureka:
+  instance:
+    instance-id: provider9091
+    prefer-ip-address: true
